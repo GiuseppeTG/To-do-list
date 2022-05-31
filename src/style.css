@@ -1,4 +1,39 @@
-body {
-  background-color: rgb(191, 143, 39);
-  color: aliceblue;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+:root {
+  --color1: rgb(255, 234, 234);
+}
+
+body {
+  background-color: var(--color1);
+}
+
+h1 {
+  width: fit-content;
+  margin: 75px auto;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 15px 10px;
+  border-bottom: var(--color1) solid 1px;
+}
+
+input {
+  border: none;
+}
+
+.list-container {
+  background-color: white;
+  margin: auto;
+  max-width: 500px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+}
+
