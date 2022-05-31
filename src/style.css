@@ -5,16 +5,22 @@
 }
 
 :root {
-  --color1: rgb(255, 234, 234);
+  --color1: rgb(253, 235, 235);
+  --text-color: rgb(68, 68, 68);
 }
 
 body {
   background-color: var(--color1);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 100;
+  color: var(--text-color);
 }
 
 h1 {
   width: fit-content;
   margin: 75px auto;
+  font-weight: 100;
+  letter-spacing: 2px;
 }
 
 ul {
@@ -24,6 +30,8 @@ ul {
 li {
   padding: 15px 10px;
   border-bottom: var(--color1) solid 1px;
+  display: flex;
+  align-items: center;
 }
 
 input {
@@ -36,4 +44,31 @@ input {
   max-width: 500px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
 }
+
+.list-header {
+  letter-spacing: 1px;
+}
+
+.checkbox {
+  margin-right: 10px;
+  accent-color: green;
+}
+
+.item-action {
+  margin-left: auto;
+  cursor: move;
+}
+
+.clear-button {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+
 
