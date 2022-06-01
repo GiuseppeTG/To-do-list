@@ -51,7 +51,6 @@ input {
 
 .checkbox {
   margin-right: 10px;
-  accent-color: green;
 }
 
 .item-action {
@@ -69,6 +68,3 @@ input {
   color: var(--text-color);
   cursor: pointer;
 }
-
-
-

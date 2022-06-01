@@ -1,13 +1,4 @@
-import _ from 'lodash';
 import './style.css';
-
-class Task {
-  constructor(description, author, index) {
-    this.description = description;
-    this.author = author;
-    this.index = index;
-  }
-}
 
 const tasks = [
   {
@@ -26,7 +17,6 @@ const tasks = [
     index: 2,
   },
 ];
-
 
 const toDoList = (tasks) => {
   for (let i = 0; i < tasks.length; i += 1) {
@@ -50,10 +40,7 @@ const toDoList = (tasks) => {
     item.appendChild(checkbox);
     item.appendChild(taskText);
     item.appendChild(itemAction);
-    
   }
 };
 
 toDoList(tasks);
-
-
