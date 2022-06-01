@@ -4,11 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/d1333a485b.js" crossorigin="anonymous"></script>
   <title>Wbpack Exercise</title>
 </head>
 
 <body>
-  <h1>Hello webpack!</h1>
+  <h1>To Do List</h1>
+
+  <div class="list-container">
+    <ul class="list">
+      <li class="list-header">Today's To Do</li>
+      <li class="list-input"><input type="text" placeholder="Add to your list..." id="add-input"></li>
+      
+      <li class="item">
+        <input type="checkbox" class="checkbox">
+        <p class="task-text">listed item1</p>
+        <i class="fa-solid fa-ellipsis-vertical item-action"></i>
+      </li>
+    </ul>
+    <button type="button" class="clear-button">Clear all completed</button>
+    
+  </div>
+
 </body>
 
 </html>
