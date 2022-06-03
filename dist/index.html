@@ -4,18 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/d1333a485b.js" crossorigin="anonymous"></script>
   <title>Wbpack Exercise</title>
 <script defer src="index.bundle.js"></script></head>
 
 <body>
+  
   <h1>To Do List</h1>
 
   <div class="list-container">
-    <ul>
-      <li>Today's To Do0oo'</li>
-      <li><input type="text" placeholder="Add to your list..."></li>
+    
+  <p class="list-header">Today's To Do<i class="fa-solid fa-arrows-rotate reset-button"></i></p>
+      
+    <form class="task-form">
+      <input type="text" placeholder="Add to your list..." class="add-input" id="add-input" required>
+      <button type="submit" class="submit-button"><i class="fa-solid fa-arrow-right-to-bracket submit-icon"></i></button>
+    </form>
+      
+    <ul class="list">   
+      <li class="item">
+        <input type="checkbox" class="checkbox">
+        <p class="task-text">HTML</p>
+        <i class="fa-solid fa-ellipsis-vertical item-dots"></i>
+        <i class="fa-solid fa-trash disabled item-trash disabled"></i>
+      </li>
     </ul>
+    <button type="button" class="clear-button">Clear all completed</button>
+    
   </div>
+
 </body>
 
 </html>

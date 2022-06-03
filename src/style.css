@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color1: rgb(253, 235, 235);
+  --color1: rgb(188, 226, 244);
   --text-color: rgb(68, 68, 68);
 }
 
@@ -38,6 +38,14 @@ input {
   border: none;
 }
 
+.reset-button{
+  transition: ease-in-out 1s;
+}
+
+.reset-button:hover {
+  transform: rotate(360deg);
+}
+
 .list-container {
   background-color: white;
   margin: auto;
@@ -46,16 +54,46 @@ input {
 }
 
 .list-header {
+  display: flex;
+  justify-content: space-between;
   letter-spacing: 1px;
+  padding: 15px 10px;
+  border-bottom: var(--color1) solid 1px;
+}
+
+.task-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+  border-bottom: var(--color1) solid 1px;
+}
+
+.add-input {
+  width: 80%;
+}
+
+.add-input::placeholder {
+  font-size: 15px;
+}
+
+.submit-button {
+  border: none;
+  background: none;
 }
 
 .checkbox {
   margin-right: 10px;
 }
 
-.item-action {
+.item-dots {
   margin-left: auto;
   cursor: move;
+}
+
+.item-trash {
+  margin-left: auto;
+  cursor: pointer;
 }
 
 .clear-button {
@@ -67,4 +105,19 @@ input {
   font-size: 16px;
   color: var(--text-color);
   cursor: pointer;
+  background-color: rgb(243, 217, 165);
+}
+
+.done {
+  text-decoration: line-through 2px;
+  text-decoration-color: green;
+  
+}
+
+.item-checked {
+  background-color: rgb(255, 255, 213);
+}
+
+.disabled {
+  display: none;
 }

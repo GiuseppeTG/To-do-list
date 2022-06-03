@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-[[Live Demo Link](https://giuseppetg.github.io/To-do-list)]
+[[Live Demo Link]()]
 
 
 ## Getting Started
