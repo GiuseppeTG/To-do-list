@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color1: rgb(244, 221, 188);
+  --color1: rgb(188, 217, 244);
   --text-color: rgb(68, 68, 68);
 }
 
@@ -115,7 +115,7 @@ input {
   font-size: 16px;
   color: var(--text-color);
   cursor: pointer;
-  background-color: rgb(165, 221, 243);
+  background-color: rgb(243, 209, 165);
 }
 
 .editing {
