@@ -19,15 +19,14 @@ export default class Store {
   static removeTasks = (taskToDelete) => {
     const tasks = Store.getTasks();
     let newArr = [];
+
     for (let i = 0; i < tasks.length; i += 1) {
       if (tasks[i].completed === taskToDelete) {
         newArr = tasks.filter((task) => task.completed === false);
       }
     }
 
-    for (let i = 0; i < newArr.length; i += 1) {
-      newArr[i].index = i;
-    }
+    newArr.forEach((element, index) => element.index = index);
 
     localStorage.setItem('tasks', JSON.stringify(newArr));
   }
