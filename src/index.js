@@ -18,7 +18,6 @@ init();
 
 document.querySelector('.task-form').addEventListener('submit', (e) => {
   e.preventDefault();
-
   const description = document.querySelector('#add-input').value;
   const task = new Task(description, false, Store.getTasks().length);
   Store.addTask(task);
@@ -29,13 +28,7 @@ document.querySelector('.task-form').addEventListener('submit', (e) => {
 // -----RESET ALL TASKS-----//
 
 document.querySelector('.reset-button').addEventListener('click', () => {
-  const tasks = [];
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-  const allItems = document.querySelectorAll('.item');
-  allItems.forEach((item) => {
-    item.remove();
-  });
-  document.querySelector('.add-input').value = null;
+  UI.deleteAll();
 });
 
 // -----MARK AS DONE-----//
@@ -43,11 +36,14 @@ document.querySelector('.reset-button').addEventListener('click', () => {
 document.querySelector('.list').addEventListener('change', (e) => {
   if (e.target.type === 'checkbox') {
     const tasks = Store.getTasks();
-    e.target.nextElementSibling.classList.toggle('done');
-    e.target.parentElement.classList.toggle('item-checked');
-    e.target.nextElementSibling.nextElementSibling.classList.toggle('disabled');
-    e.target.nextElementSibling.nextElementSibling.nextElementSibling.classList.toggle('disabled');
-    const checkboxIndex = e.target.dataset.index;
+    const checkbox = e.target; 
+    const checkboxIndex = Number(checkbox.dataset.index);
+
+    checkbox.nextElementSibling.classList.toggle('done');
+    checkbox.parentElement.classList.toggle('item-checked');
+    checkbox.nextElementSibling.nextElementSibling.classList.toggle('disabled');
+    checkbox.parentElement.lastChild.classList.toggle('disabled');
+
     updateCompletedStatus(tasks, checkboxIndex);
   }
 });
@@ -59,11 +55,10 @@ document.querySelector('.list').addEventListener('click', (e) => {
     const tasks = Store.getTasks();
     const itemTrash = e.target;
     const checkboxIndex = Number(itemTrash.parentElement.firstChild.dataset.index);
-    itemTrash.parentElement.remove();
-
     const taskToDelete = tasks[checkboxIndex].completed;
+    itemTrash.parentElement.remove();
     Store.removeTasks(taskToDelete);
-    window.location.reload();
+    UI.updateCheckbox();
   }
 });
 
@@ -79,12 +74,10 @@ document.querySelector('.clear-button').addEventListener('click', () => {
       uncompletedTasks.push(tasks[i]);
     }
   }
+  uncompletedTasks.forEach((value, index) => value.index = index);
 
-  for (let i = 0; i < uncompletedTasks.length; i += 1) {
-    uncompletedTasks[i].index = i;
-  }
   localStorage.setItem('tasks', JSON.stringify(uncompletedTasks));
-  window.location.reload();
+  UI.updateCheckbox();
 });
 
 // -----EDIT-----//

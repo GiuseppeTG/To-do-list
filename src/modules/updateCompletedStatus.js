@@ -1,7 +1,7 @@
-const updateCompletedStatus = (array, id) => {
-  if (array[id].index === Number(id)) {
-    array[id].completed = !array[id].completed;
-    localStorage.setItem('tasks', JSON.stringify(array));
+const updateCompletedStatus = (tasks, checkboxIndex) => {
+  if (tasks[checkboxIndex].index === checkboxIndex) {
+    tasks[checkboxIndex].completed = !tasks[checkboxIndex].completed;
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 };
 
