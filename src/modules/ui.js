@@ -52,3 +52,4 @@ export default class UI {
 
   static displayTasks = (task) => this.getToDoList(task);
 }
+
