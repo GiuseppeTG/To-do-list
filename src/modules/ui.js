@@ -1,5 +1,4 @@
 export default class UI {
-  
   static getToDoList = (task) => {
     const list = document.querySelector('.list');
 
@@ -24,7 +23,7 @@ export default class UI {
 
     if (task.completed === true) {
       taskText.classList.add('done');
-      item.classList.add('item-checked')
+      item.classList.add('item-checked');
       checkbox.checked = true;
       itemDots.classList.add('disabled');
       itemTrash.classList.remove('disabled');
@@ -38,18 +37,17 @@ export default class UI {
   }
 
   static deleteAll = () => {
-   const tasks = [];
-   localStorage.setItem('tasks', JSON.stringify(tasks));
-   const allItems = document.querySelectorAll('.item');
-   allItems.forEach(item => item.remove());
-   document.querySelector('.add-input').value = null;
+    const tasks = [];
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    const allItems = document.querySelectorAll('.item');
+    allItems.forEach((item) => item.remove());
+    document.querySelector('.add-input').value = null;
   }
 
   static updateCheckbox = () => {
-  const checkboxes = document.querySelectorAll('.checkbox');
-  checkboxes.forEach((element, index) => element.dataset.index = index);
+    const checkboxes = document.querySelectorAll('.checkbox');
+    checkboxes.forEach((element, index) => element.dataset.index = index);
   }
 
   static displayTasks = (task) => this.getToDoList(task);
 }
-

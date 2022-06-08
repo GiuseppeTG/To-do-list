@@ -38,6 +38,8 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
+    "@jest/globals": "^27.0.6",
+    "jest-environment-jsdom": "^28.1.1",
     "lodash": "^4.17.21"
   },
   "main": "webpack.config.js",

@@ -36,7 +36,7 @@ document.querySelector('.reset-button').addEventListener('click', () => {
 document.querySelector('.list').addEventListener('change', (e) => {
   if (e.target.type === 'checkbox') {
     const tasks = Store.getTasks();
-    const checkbox = e.target; 
+    const checkbox = e.target;
     const checkboxIndex = Number(checkbox.dataset.index);
 
     checkbox.nextElementSibling.classList.toggle('done');

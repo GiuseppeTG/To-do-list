@@ -19,9 +19,9 @@ export default class Store {
   static removeTasks = (taskToDelete) => {
     const tasks = Store.getTasks();
     let newArr = [];
-    tasks.forEach( task => {
+    tasks.forEach((task) => {
       if (task.completed === taskToDelete) {
-        newArr = tasks.filter( task => task.completed === false);
+        newArr = tasks.filter((task) => task.completed === false);
       }
     });
     newArr.forEach((element, index) => element.index = index);
