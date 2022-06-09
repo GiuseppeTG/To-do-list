@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1654735282076" clover="3.2.0">
-  <project timestamp="1654735282077" name="All files">
+<coverage generated="1654737491175" clover="3.2.0">
+  <project timestamp="1654737491175" name="All files">
     <metrics statements="54" coveredstatements="40" conditionals="6" coveredconditionals="3" methods="12" coveredmethods="5" elements="72" coveredelements="48" complexity="0" loc="54" ncloc="54" packages="1" files="2" classes="2"/>
     <file name="storage.js" path="/Users/giuseppe/Desktop/MICROVERSE/MODULE_2/To-do-list/src/modules/storage.js">
       <metrics statements="18" coveredstatements="11" conditionals="4" coveredconditionals="2" methods="6" coveredmethods="2"/>
       <line num="2" count="2" type="stmt"/>
-      <line num="3" count="3" type="stmt"/>
-      <line num="5" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="6" count="1" type="stmt"/>
-      <line num="9" count="2" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
       <line num="10" count="1" type="stmt"/>
       <line num="13" count="2" type="stmt"/>
       <line num="14" count="1" type="stmt"/>

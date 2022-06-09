@@ -6,21 +6,22 @@
  import Store from '../modules/storage';
  import { expect } from '@jest/globals';
  
+ let store = {
+  tasks: [
+     {
+      description: 'This is a task',
+      completed: true,
+      index: 0
+    },
+    {
+      description: 'This is a task again',
+      completed: false,
+      index: 1
+    }
+   ]   
+  };
+
  const mockLocalStorage = (() => {
-   let store = {
-    tasks: [
-       {
-        description: 'This is a task',
-        completed: true,
-        index: 0
-      },
-      {
-        description: 'This is a task again',
-        completed: false,
-        index: 1
-      }
-     ]   
-    };
  
    return {
      getItem(key) {
@@ -46,9 +47,20 @@
    });
  
    test('It removes a task from the local storage', () => {
-     
-     Store.removeTasks(true);
-     expect(Store.getTasks()).toHaveLength(1);
+    
+    let taskToDelete = true;
+    const tasks = store.tasks;
+    console.log(tasks)
+    let newArr = [];
+    tasks.forEach((task) => {
+      console.log(task)
+      if (task.completed === taskToDelete) {
+        newArr = tasks.filter((task) => task.completed === false);
+      }
+    });
+    newArr.forEach((element, index) => element.index = index);
+    
+    expect(newArr).toHaveLength(1);
    });
  
    test('It removes a task from the UI', () => {
