@@ -4,6 +4,7 @@
 
 import UI from '../modules/ui';
 import Store from '../modules/storage';
+import { expect } from '@jest/globals';
 
 const mockLocalStorage = (() => {
   let store = {};
@@ -41,4 +42,14 @@ describe('Test adding functionalities', () => {
     Store.addTask(task);
     expect(Store.getTasks()).toHaveLength(1);
   });
+
+  test('It adds a new task to the UI', () => {
+    document.body.innerHTML =
+    '<div>' +
+    '  <ul class="list"></ul>' +
+    '</div>';
+    UI.getToDoList(task);
+    const list = document.querySelectorAll('.list li');
+    expect(list).toHaveLength(1);
+  })
 });

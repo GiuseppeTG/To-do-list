@@ -41,7 +41,6 @@ export default class UI {
     localStorage.setItem('tasks', JSON.stringify(tasks));
     const allItems = document.querySelectorAll('.item');
     allItems.forEach((item) => item.remove());
-    document.querySelector('.add-input').value = null;
   }
 
   static updateCheckbox = () => {
