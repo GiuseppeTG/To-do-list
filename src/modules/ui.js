@@ -40,7 +40,7 @@ export default class UI {
     const tasks = [];
     localStorage.setItem('tasks', JSON.stringify(tasks));
 
-    const allItems = document.querySelectorAll('.list li');
+    const allItems = document.querySelectorAll('.item');
     allItems.forEach((item) => item.remove());
 
     // console.log(document.querySelector('.list'))

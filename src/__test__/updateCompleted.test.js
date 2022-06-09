@@ -3,11 +3,9 @@
  */
 
 import { expect } from '@jest/globals';
-import UI from '../modules/ui';
-import updateCompletedStatus from '../modules/updateCompletedStatus'
- 
- 
-let tasks = [
+import updateCompletedStatus from '../modules/updateCompletedStatus';
+
+const tasks = [
   {
     description: 'This is a task',
     completed: false,
@@ -18,21 +16,18 @@ let tasks = [
     completed: true,
     index: 1,
   },
-]
+];
 
 describe('Test change status', () => {
-  
   test('Update completed status', () => {
-   const checkboxIndex = 0;
-   updateCompletedStatus(tasks, checkboxIndex)
-   expect(tasks[checkboxIndex].completed).toBeTruthy
+    const checkboxIndex = 0;
+    updateCompletedStatus(tasks, checkboxIndex);
+    expect(tasks[checkboxIndex].completed).toBeTruthy();
   });
-  
+
   test('Update completed status', () => {
-   const checkboxIndex = 1;
-   updateCompletedStatus(tasks, checkboxIndex)
-   expect(tasks[checkboxIndex].completed).toBeFalsy
+    const checkboxIndex = 1;
+    updateCompletedStatus(tasks, checkboxIndex);
+    expect(tasks[checkboxIndex].completed).toBeFalsy();
   });
- 
 });
- 
