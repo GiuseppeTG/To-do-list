@@ -74,7 +74,7 @@ document.querySelector('.clear-button').addEventListener('click', () => {
       uncompletedTasks.push(tasks[i]);
     }
   }
-  uncompletedTasks.forEach((value, index) => value.index = index);
+  uncompletedTasks.forEach((value, index) => { value.index = index; });
 
   localStorage.setItem('tasks', JSON.stringify(uncompletedTasks));
   UI.updateCheckbox();

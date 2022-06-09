@@ -24,7 +24,7 @@ export default class Store {
         newArr = tasks.filter((task) => task.completed === false);
       }
     });
-    newArr.forEach((element, index) => element.index = index);
+    newArr.forEach((element, index) => { element.index = index; });
     localStorage.setItem('tasks', JSON.stringify(newArr));
   }
 }

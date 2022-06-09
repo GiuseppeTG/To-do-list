@@ -2,9 +2,9 @@
  * @jest-environment jsdom
  */
 
+import { expect } from '@jest/globals';
 import UI from '../modules/ui';
 import Store from '../modules/storage';
-import { expect } from '@jest/globals';
 
 const mockLocalStorage = (() => {
   let store = {};
@@ -44,12 +44,11 @@ describe('Test adding functionalities', () => {
   });
 
   test('It adds a new task to the UI', () => {
-    document.body.innerHTML =
-    '<div>' +
-    '  <ul class="list"></ul>' +
-    '</div>';
+    document.body.innerHTML = '<div>'
+    + '  <ul class="list"></ul>'
+    + '</div>';
     UI.getToDoList(task);
     const list = document.querySelectorAll('.list li');
     expect(list).toHaveLength(1);
-  })
+  });
 });

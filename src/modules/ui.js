@@ -45,7 +45,7 @@ export default class UI {
 
   static updateCheckbox = () => {
     const checkboxes = document.querySelectorAll('.checkbox');
-    checkboxes.forEach((element, index) => element.dataset.index = index);
+    checkboxes.forEach((element, index) => { element.dataset.index = index; });
   }
 
   static displayTasks = (task) => this.getToDoList(task);
