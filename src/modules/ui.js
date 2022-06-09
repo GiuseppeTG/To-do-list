@@ -39,8 +39,11 @@ export default class UI {
   static deleteAll = () => {
     const tasks = [];
     localStorage.setItem('tasks', JSON.stringify(tasks));
+
     const allItems = document.querySelectorAll('.item');
     allItems.forEach((item) => item.remove());
+
+    // console.log(document.querySelector('.list'))
   }
 
   static updateCheckbox = () => {
